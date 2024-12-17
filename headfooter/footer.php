@@ -1,42 +1,4 @@
 </main>
-        <!-- Footer 2 - Bootstrap Brain Component -->
-        <footer class="bg-dark text-light py-4">
-    <div class="container">
-        <div class="row">
-            <!-- Información de contacto -->
-            <div class="col-md-4">
-                <h5 class="mb-3">Contacto</h5>
-                <p><i class="bi bi-house-door"></i> Dirección: Calle Ejemplo, 123, Ciudad</p>
-                <p><i class="bi bi-envelope"></i> Correo: rios222002@gmail.com</p>
-                <p><i class="bi bi-telephone"></i> Teléfono: +503 6209 3638</p>
-            </div>
-            
-            <!-- Enlaces rápidos -->
-            <div class="col-md-4">
-                <h5 class="mb-3">Enlaces rápidos</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#" class="text-light">Inicio</a></li>
-                    <li><a href="#" class="text-light">Productos</a></li>
-                    <li><a href="#" class="text-light">Sobre nosotros</a></li>
-                    <li><a href="#" class="text-light">Contacto</a></li>
-                </ul>
-            </div>
-            
-            <!-- Redes sociales -->
-            <div class="col-md-4">
-                <h5 class="mb-3">Síguenos</h5>
-                <a href="#" class="text-light me-2"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="text-light me-2"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="text-light me-2"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="text-light"><i class="bi bi-linkedin"></i></a>
-            </div>
-        </div>
-        <div class="text-center mt-4">
-            <p class="mb-0">&copy; 2024 Rios. Todos los derechos reservados.</p>
-        </div>
-    </div>
-</footer>
-
 <!-- Incluir Bootstrap Icons -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
@@ -809,5 +771,7 @@
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
             crossorigin="anonymous"
         ></script>
+
+        
     </body>
 </html>

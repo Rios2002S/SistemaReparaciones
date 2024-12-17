@@ -1,0 +1,194 @@
+.infor {
+    text-align: right;
+    background: #1e1e1e;  /* Gris oscuro, moderno */
+    color: #e5e5e5;  /* Gris claro para contraste suave */
+    font-family: "Protest Guerrilla", sans-serif;
+}
+
+/* Estilo para el navbar cuando se vuelve pegajoso */
+.fijo {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030; 
+    transition: top 0.3s; 
+    background-color: darkblue;  /* Gris oscuro para el navbar */
+}
+
+/* Estilo para la imagen del logo */
+.user-logo {
+    width: 150px; /* Logo más pequeño */
+    height: 150px; /* Mantiene la proporción del logo */
+}
+
+/* Estilo del nombre de usuario */
+.username {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 0 20px;
+    border-bottom: solid #444;  /* Gris más oscuro para el borde */
+    display: flex;
+    flex-direction: column;  /* Alinea el logo y el nombre en columna */
+    align-items: center;     /* Centra todo el contenido horizontalmente */
+}
+
+/* Estilos del menú deslizante */
+#sideMenu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #131c46;  
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    z-index: 1050; /* Encima del contenido principal */
+}
+
+/* Estilos de los enlaces del menú */
+#sideMenu a {
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #f1f1f1;  /* Blanco suave */
+    display: block;
+    transition: 0.3s;
+    border-bottom: 1px solid #444;
+}
+
+#sideMenu a:hover {
+    background-color: #3c4c8f;  /* Azul brillante para el hover */
+    color: white;
+}
+
+/* Ícono de cerrar el menú */
+#sideMenu .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: #ffffff;  /* Blanco para el ícono de cerrar */
+    cursor: pointer;
+}
+
+/* Botón para abrir el menú */
+.open-btn {
+    position: fixed;    /* Mantenerlo fijo en la pantalla */
+    top: 35px;          /* Ajusta la posición superior */
+    left: 5px;          /* Ajusta la posición izquierda */
+    font-size: 20px;
+    cursor: pointer;
+    background-color: darkblue;  /* Azul brillante para el botón */
+    color: #fff;
+    border: none;
+    padding: 10px 10px 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+    z-index: 1000;      /* Asegura que esté sobre otros elementos */
+}
+
+.open-btn:hover {
+    background-color:#01042e;
+}
+
+/* Overlay oscuro */
+#menuOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1049; /* Debajo del menú pero encima del contenido */
+    transition: opacity 0.3s;
+}
+
+#menuOverlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Estilo del botón de Home */
+.home-btn {
+    background-color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.home-btn:hover {
+    transform: scale(1.2);
+    background-color: #f0f0f0;
+}
+
+/* Estilo del icono */
+.home-icon {
+    font-size: 24px;
+    color: silver;  /* Azul brillante para el icono */
+}
+
+/* Estilo para el menú desplegable (dropdown) */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 10px 20px;
+    background-color: #131c46;  
+    border: none;
+    width: 100%;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    min-width: 200px;
+    background-color: #444; /* Gris oscuro para el menú */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    list-style: none;
+    padding: 0;
+}
+
+.dropdown-menu .dropdown-item {
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    color: #f1f1f1;
+    font-size: 14px;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: silver; 
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Estilos para los íconos */
+i {
+    margin-right: 10px;
+}
+
+/* Estilos específicos para el dropdown de perfil y reparaciones */
+.dropdown-toggle:hover {
+    background-color: #444; /* Gris oscuro para el hover */
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: silver;
+}
+
+

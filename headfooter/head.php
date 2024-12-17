@@ -98,148 +98,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script src="https://apis.google.com/js/api.js"></script>
-        <style>
-            .infor {
-                text-align: right;
-                background: darkblue;
-                color: white;
-                font-family: "Protest Guerrilla", sans-serif;
-            }
-                        /* Estilo para el navbar cuando se vuelve pegajoso */
-            .fijo {
-                position: fixed;
-                top: 0;
-                width: 100%;
-                z-index: 1030; 
-                transition: top 0.3s; 
-            }
-            /* Estilo para la imagen del logo */
-            .user-logo {
-                width: 200px; /* Logo más pequeño */
-                height: auto; /* Mantiene la proporción del logo */
-                margin-bottom: -25px; /* Menos espacio entre el logo y el nombre */
-            }
-            .username {
-                font-size: 20px;
-                font-weight: bold;
-                color: #333;
-                text-align: center;
-                margin-bottom: 20px;
-                padding: 0 20px;
-                border-bottom: 2px solid #bbb;
-                display: flex;
-                flex-direction: column;  /* Alinea el logo y el nombre en columna */
-                align-items: center;     /* Centra todo el contenido horizontalmente */
-            }
-         /* Estilos del menú deslizante */
-         #sideMenu {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background-color: #d3d3d3;
-            overflow-x: hidden;
-            transition: 0.3s;
-            padding-top: 60px;
-            z-index: 1050; /* Encima del contenido principal */
-        }
-
-        #sideMenu a {
-            padding: 10px 20px;
-            text-decoration: none;
-            font-size: 18px;
-            color: #333;
-            display: block;
-            transition: 0.3s;
-            border-bottom: 1px solid #bbb;
-        }
-
-        #sideMenu a:hover {
-            background-color: #bbb;
-        }
-
-        #sideMenu .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 30px;
-            color: #333;
-            cursor: pointer;
-        }
-
-        #sideMenu .username {
-            font-size: 20px;
-            font-weight: bold;
-            color: #333;
-            text-align: center;
-            margin-bottom: 20px;
-            padding: 0 20px;
-            border-bottom: 2px solid #bbb;
-        }
-
-        /* Botón para abrir el menú */
-        .open-btn {
-            position: fixed;    /* Mantenerlo fijo en la pantalla */
-            top: 35px;          /* Ajusta la posición superior */
-            left: 5px;         /* Ajusta la posición izquierda */
-            font-size: 20px;
-            cursor: pointer;
-            background-color: darkblue;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: 0.3s;
-            z-index: 1000;      /* Asegura que esté sobre otros elementos */
-        }
-
-
-        .open-btn:hover {
-            background-color: #0056b3;
-        }
-
-        /* Overlay oscuro */
-        #menuOverlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1049; /* Debajo del menú pero encima del contenido */
-            transition: opacity 0.3s;
-        }
-
-        #menuOverlay.active {
-            display: block;
-            opacity: 1;
-        }
-
-        /* Estilo del botón de Home */
-        .home-btn {
-            background-color: white;
-            border: none;
-            padding: 15px;
-            border-radius: 50%;
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-
-        .home-btn:hover {
-            transform: scale(1.2);
-            background-color: #f0f0f0;
-        }
-
-        /* Estilo del icono */
-        .home-icon {
-            font-size: 24px;
-            color: darkblue;
-        }
-
-        </style>
+     <link rel="stylesheet" href="../css/disenio.css">   
     </head>
 
     <body>
@@ -249,99 +108,65 @@
             </div><br><br>
 
 
-          <!-- Menú deslizante -->
-          <div id="sideMenu">
-                <span class="close-btn" onclick="closeMenu()">&times;</span>
-                <div class="username">
-                    <!-- Logo sobre el nombre -->
-                    <img src="https://i.ibb.co/kgNwmJs/logo2.png" alt="Logo" class="user-logo">
-                    <?php echo htmlspecialchars($nombreu); ?>
-                </div>                
-                <a href="../home/home.php">Inicio</a>
-                <a href="../home/nrep.php">Nueva Reparación</a>
-                <a href="../home/maquetas.php">Maquetas</a>
-                <a href="../home/repen.php">Reparaciones Finalizadas</a>
-                <a href="../home/entregadas.php">Reparaciones Entregadas</a>
-                <a href="../home/clientes.php">Editar Clientes</a>
-                <?php if ($es_admin): ?>
-                    <a href="../panel_administrador/register.php">Administrar Usuarios/Sucursales</a>
-                    <a href="../panel_administrador/dashboard.php">Principal</a>
-                <?php endif; ?>
-                <a href="../bd/logout.php">Cerrar Sesión</a>
-          </div>
+                <!-- Menú deslizante -->
+                <?php
+                require_once  '../adicionales/navbar.php';
+                ?>
 
-        <!-- Overlay -->
-        <div id="menuOverlay" onclick="closeMenu()"></div>
+            </header>
 
-        <div class="container mx-5">
-            <button class="open-btn " onclick="openMenu()" data-bs-toggle="tooltip" title="Abrir menú"><i class="fas fa-bars"></i></button>
-        </div>
-    </header>
+            <main>
+                <?php
+                    // Establecer la zona horaria de Centroamérica (El Salvador)
+                    date_default_timezone_set('America/El_Salvador');
 
-    <main>
-        <?php
-            // Establecer la zona horaria de Centroamérica (El Salvador)
-            date_default_timezone_set('America/El_Salvador');
+                    // Establecer los nombres de los meses en español
+                    $meses = array(
+                        1 => 'Enero', 2 => 'Febrero', 3 => 'Marzo', 4 => 'Abril', 5 => 'Mayo', 6 => 'Junio',
+                        7 => 'Julio', 8 => 'Agosto', 9 => 'Septiembre', 10 => 'Octubre', 11 => 'Noviembre', 12 => 'Diciembre'
+                    );
 
-            // Establecer los nombres de los meses en español
-            $meses = array(
-                1 => 'Enero', 2 => 'Febrero', 3 => 'Marzo', 4 => 'Abril', 5 => 'Mayo', 6 => 'Junio',
-                7 => 'Julio', 8 => 'Agosto', 9 => 'Septiembre', 10 => 'Octubre', 11 => 'Noviembre', 12 => 'Diciembre'
-            );
+                    // Obtener la hora actual
+                    $hora_actual = date('H'); // La hora en formato de 24 horas (00-23)
 
-            // Obtener la hora actual
-            $hora_actual = date('H'); // La hora en formato de 24 horas (00-23)
+                    // Determinar el saludo según la hora
+                    if ($hora_actual >= 0 && $hora_actual < 12) {
+                        $saludo = "Buen día 🌅";
+                    } elseif ($hora_actual >= 12 && $hora_actual < 18) {
+                        $saludo = "Buenas tardes 🌞";
+                    } else {
+                        $saludo = "Buenas noches 🌙";
+                    }
 
-            // Determinar el saludo según la hora
-            if ($hora_actual >= 0 && $hora_actual < 12) {
-                $saludo = "Buen día 🌅";
-            } elseif ($hora_actual >= 12 && $hora_actual < 18) {
-                $saludo = "Buenas tardes 🌞";
-            } else {
-                $saludo = "Buenas noches 🌙";
-            }
+                    // Obtener la fecha actual (mes, día)
+                    $mes = $meses[date('n')]; // Usar el mes en español
+                    $dia = date('j'); // Día del mes (sin ceros a la izquierda)
+                ?>
+                    <div class="container">
+                        <div class="alert alert-primary mt-4" role="alert">
+                            <h5><?php echo $saludo . " " . htmlspecialchars($nombreu); ?></h5>
+                            <p>Fecha: <?php echo $mes . " " . $dia; ?></p>
+                            <p>Hora: <span id="hora"></span></p> 
+                        </div>       
+                    </div>
 
-            // Obtener la fecha actual (mes, día)
-            $mes = $meses[date('n')]; // Usar el mes en español
-            $dia = date('j'); // Día del mes (sin ceros a la izquierda)
-        ?>
-            <div class="container">
-                <div class="alert alert-primary mt-4" role="alert">
-                    <h5><?php echo $saludo . " " . htmlspecialchars($nombreu); ?></h5>
-                    <p>Fecha: <?php echo $mes . " " . $dia; ?></p>
-                    <p>Hora: <span id="hora"></span></p>
-                </div>
-            </div>
+                    <!-- Script para actualizar la hora dinámicamente -->
+                    <script>
+                        function actualizarHora() {
+                            const ahora = new Date();
+                            const horas = ahora.getHours().toString().padStart(2, '0');
+                            const minutos = ahora.getMinutes().toString().padStart(2, '0');
+                            const segundos = ahora.getSeconds().toString().padStart(2, '0');
+                            const horaActual = horas + ":" + minutos + ":" + segundos;
+                            document.getElementById('hora').textContent = horaActual;
+                        }
 
-            <!-- Script para actualizar la hora dinámicamente -->
-            <script>
-                function actualizarHora() {
-                    const ahora = new Date();
-                    const horas = ahora.getHours().toString().padStart(2, '0');
-                    const minutos = ahora.getMinutes().toString().padStart(2, '0');
-                    const segundos = ahora.getSeconds().toString().padStart(2, '0');
-                    const horaActual = horas + ":" + minutos + ":" + segundos;
-                    document.getElementById('hora').textContent = horaActual;
-                }
+                        // Llamar a la función de actualización cada 1000 ms (1 segundo)
+                        setInterval(actualizarHora, 1000);
 
-                // Llamar a la función de actualización cada 1000 ms (1 segundo)
-                setInterval(actualizarHora, 1000);
-
-                // Llamar a la función una vez al cargar la página para mostrar la hora inmediatamente
-                actualizarHora();
-            </script>
-    </main>
-
-    <script>
-        function openMenu() {
-            document.getElementById("sideMenu").style.width = "250px";
-            document.getElementById("menuOverlay").classList.add("active");
-        }
-
-        function closeMenu() {
-            document.getElementById("sideMenu").style.width = "0";
-            document.getElementById("menuOverlay").classList.remove("active");
-        }
-    </script>
+                        // Llamar a la función una vez al cargar la página para mostrar la hora inmediatamente
+                        actualizarHora();
+                    </script>
+            </main>
         </header>
         <main>
