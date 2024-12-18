@@ -30,6 +30,8 @@
         <a href="../panel_administrador/dashboard.php"><i class="fas fa-tachometer-alt"></i> Principal</a>
     <?php endif; ?>
 
+    <a href="../home/mensajeria.php"><i class="fas fa-users"></i> Mensajeria</a>
+
     <!-- Dropdown para el perfil y cerrar sesión -->
     <div class="dropdown">
         <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user"></i><?php echo htmlspecialchars($nombreu); ?></a>
