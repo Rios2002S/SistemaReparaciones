@@ -16,11 +16,12 @@
         <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-tools"></i> Reparaciones</a>
         <ul class="dropdown-menu">
             <li><a href="../home/nrep.php" class="dropdown-item">Nueva Reparación</a></li>
-            <li><a href="../home/maquetas.php" class="dropdown-item">Maquetas</a></li>
             <li><a href="../home/repen.php" class="dropdown-item">Reparaciones Finalizadas</a></li>
             <li><a href="../home/entregadas.php" class="dropdown-item">Reparaciones Entregadas</a></li>
         </ul>
     </div>
+    
+    <a href="../home/maquetas.php"><i class="fa fa-paint-brush"></i> Maquetas</a>
 
     <a href="../home/clientes.php"><i class="fas fa-users"></i> Editar Clientes</a>
 
@@ -30,7 +31,7 @@
         <a href="../panel_administrador/dashboard.php"><i class="fas fa-tachometer-alt"></i> Principal</a>
     <?php endif; ?>
 
-    <a href="../home/mensajeria.php"><i class="fas fa-users"></i> Mensajeria</a>
+    <a href="../home/mensajeria.php"><i class="fa fa-comment-dots"></i> Mensajeria</a>
 
     <!-- Dropdown para el perfil y cerrar sesión -->
     <div class="dropdown">
