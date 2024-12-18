@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Preparar y ejecutar la consulta
-    $sql = "SELECT id_usuario, nombreusu, contrasena, es_admin, sucursal_asignada FROM usuarios WHERE nombreusu = ?";
+    $sql = "SELECT id_usuario, nombreusu, nombre, contrasena, es_admin, sucursal_asignada FROM usuarios WHERE nombreusu = ?";
     $stmt = $conex->prepare($sql);
 
     // Verificar la preparación de la consulta
@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Vincular parámetros y ejecutar la consulta
     $stmt->bind_param("s", $usu);
     $stmt->execute();
-    $stmt->bind_result($id_usuario, $nombreusu, $hashedPassword, $es_admin, $sucursal_usuario);
+    $stmt->bind_result($id_usuario, $nombreusu, $nombre, $hashedPassword, $es_admin, $sucursal_usuario);
     $stmt->fetch();
 
 // Verificar si se encontró el usuario y la contraseña
@@ -39,6 +39,7 @@ if ($id_usuario && password_verify($pas, $hashedPassword)) {
     // La contraseña es correcta, iniciar sesión
     $_SESSION['id_usuario'] = $id_usuario;
     $_SESSION['nombreusu'] = $nombreusu;
+    $_SESSION['nombre'] = $nombre;
     $_SESSION['es_admin'] = $es_admin;
     $_SESSION['sucursal_asignada'] = $sucursal_usuario; // Asignar correctamente la sucursal
 
