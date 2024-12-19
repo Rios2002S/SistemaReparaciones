@@ -121,7 +121,7 @@ require_once '../headfooter/head.php';
                     // Actualizar los mensajes cada 3 segundos
                     intervalId = setInterval(function() {
                         cargarMensajes(destinatario);
-                    }, 3000); // 3000ms = 3 segundos
+                    }, 20000); // 3000ms = 3 segundos
                 } else {
                     $('#mensajeria').hide();
                     // Detener cualquier intervalo activo cuando no se selecciona un destinatario

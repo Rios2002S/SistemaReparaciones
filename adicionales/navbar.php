@@ -35,7 +35,7 @@
 
     <!-- Dropdown para el perfil y cerrar sesión -->
     <div class="dropdown">
-        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user"></i><?php echo htmlspecialchars($nombreu); ?></a>
+        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user"></i> <?php echo htmlspecialchars($nombreu); ?></a>
         <ul class="dropdown-menu">
             <li><a href="../home/perfil.php" class="dropdown-item">Ver Perfil</a></li>
             <li><a href="../bd/logout.php" class="dropdown-item">Cerrar Sesión</a></li>

@@ -83,11 +83,12 @@
     background-color: darkblue;  /* Azul brillante para el botón */
     color: #fff;
     border: none;
-    padding: 10px 10px 10px 15px;
+    padding: 10px 15px;
     border-radius: 5px;
     transition: 0.3s;
     z-index: 1000;      /* Asegura que esté sobre otros elementos */
 }
+
 
 .open-btn:hover {
     background-color:#01042e;
@@ -177,10 +178,6 @@
     display: block;
 }
 
-/* Estilos para los íconos */
-i {
-    margin-right: 10px;
-}
 
 /* Estilos específicos para el dropdown de perfil y reparaciones */
 .dropdown-toggle:hover {
@@ -191,5 +188,8 @@ i {
     background-color: silver;
 }
 
+.btn-sm, .btn {
+    width: auto !important;
+}
 
 
