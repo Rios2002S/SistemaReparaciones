@@ -1,6 +1,8 @@
 <?php
 require_once 'cn.php';
 
+session_start(); // Asegúrate de iniciar la sesión si aún no lo has hecho.
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id_cliente = $_POST['id_cliente'];
     $descripcion = $_POST['descripcion'];
@@ -13,14 +15,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $quien_recibe = $_POST['quien_recibe'];
     $fecha_recibe = $_POST['fecha_recibe'];
 
+    // Obtener la sucursal asignada al usuario de la sesión
+    $sucursal_asignada = $_SESSION['sucursal_asignada']; // Asegúrate de que esta clave esté correctamente definida en la sesión
+
     // Verificar si el valor de sucursal_o_delivery es "Delivery"
     if (strpos($sucursal_o_delivery, 'Delivery') !== false) {
         // Si es delivery, asegúrate de que incluya la dirección
         $direccion = $_POST['direccion_delivery'];
-        $sucursal_o_delivery = 'Delivery: ' . $direccion;
+        $sucursal_o_delivery = $sucursal_asignada . ' Delivery: ' . $direccion;
     } else {
-        // Si no es Delivery, guardar solo como "Sucursal"
-        $sucursal_o_delivery = 'Sucursal';
+        // Si no es Delivery, usar la sucursal asignada al usuario en sesión
+        $sucursal_o_delivery = $sucursal_asignada;
     }
 
     // Validación de los campos
@@ -50,7 +55,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             WHERE p.id_pedido = $nuevoId";
             $result = mysqli_query($conn, $pedidoQuery);
             $pedido = mysqli_fetch_assoc($result);
+    // Obtener la sucursal asignada al usuario en sesión
+    $sucursal_asignada = $_SESSION['sucursal_asignada']; // Suponiendo que está en la sesión
 
+    // Añadir la sucursal asignada al objeto pedido
+    $pedido['trabaja'] = $sucursal_asignada;
             // Devolver un JSON con éxito y la información del pedido
             echo json_encode(["success" => true, "pedido" => $pedido]);
         } else {

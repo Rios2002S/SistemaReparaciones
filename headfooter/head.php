@@ -100,7 +100,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
         <script src="https://accounts.google.com/gsi/client" async defer></script>
         <script src="https://apis.google.com/js/api.js"></script>
-     <link rel="stylesheet" href="../css/disenio.css">   
+     <link rel="stylesheet" href="../css/diseno.css">   
     </head>
 
     <body>

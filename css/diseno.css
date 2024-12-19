@@ -27,12 +27,15 @@
     font-weight: bold;
     text-align: center;
     padding: 0 20px;
-    border-bottom: solid #444;  /* Gris más oscuro para el borde */
     display: flex;
     flex-direction: column;  /* Alinea el logo y el nombre en columna */
     align-items: center;     /* Centra todo el contenido horizontalmente */
 }
-
+h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+    color: white;
+}
 /* Estilos del menú deslizante */
 #sideMenu {
     height: 100%;
@@ -40,7 +43,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #131c46;  
+    background-image: url(https://i.pinimg.com/564x/b7/20/f6/b720f68a0bfff6dbf647d0e9346eb9a6.jpg);
     overflow-x: hidden;
     transition: 0.3s;
     padding-top: 60px;
@@ -55,11 +58,10 @@
     color: #f1f1f1;  /* Blanco suave */
     display: block;
     transition: 0.3s;
-    border-bottom: 1px solid #444;
 }
 
 #sideMenu a:hover {
-    background-color: #3c4c8f;  /* Azul brillante para el hover */
+    background-color: #131c46;  /* Azul brillante para el hover */
     color: white;
 }
 
@@ -145,7 +147,6 @@
     font-size: 16px;
     display: block;
     padding: 10px 20px;
-    background-color: #131c46;  
     border: none;
     width: 100%;
 }

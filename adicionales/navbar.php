@@ -5,6 +5,7 @@
     <div class="username">
         <div class="user-logo-container">
             <img src="https://i.ibb.co/S5TM0Ww/logop.png" alt="Logo" class="user-logo">
+            <h1>GRUPO MULTICOMP</h1>
         </div>
     </div>
 

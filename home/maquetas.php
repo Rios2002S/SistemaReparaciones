@@ -46,6 +46,7 @@ if (isset($_GET['status'])) {
 <?php
 require_once "../reportes/maquetas.php";
 require_once "../reportes/pedidonuevo.php";
+require_once "../reportes/ticketpedidonuevo.php";
 ?>
 
 
